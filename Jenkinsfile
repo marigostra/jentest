@@ -9,9 +9,5 @@ pipeline {
         sh 'git pull'
       }
     }
-
-    stage('prepare') {
-      steps {
-
-  }
+}
 }
