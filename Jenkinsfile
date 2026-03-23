@@ -15,11 +15,13 @@ post {
 always {
 echo "Getting log"
         script {
-            def logContent = Jenkins.getInstance()
-                .getItemByFullName(env.JOB_NAME)
-                .getBuildByNumber(
-                    Integer.parseInt(env.BUILD_NUMBER))
-                .logFile.text
+
+def job = Jenkins.instance.getItemByFullName("luwrain/main")  
+if (!job) {  
+  println "Project not found: ${projectName}"  
+  return  
+}  
+
 }
 
 }
