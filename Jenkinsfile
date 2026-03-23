@@ -13,7 +13,15 @@ pipeline {
 
 post {
 always {
-sh 'echo always'
+echo "Getting log"
+        script {
+            def logContent = Jenkins.getInstance()
+                .getItemByFullName(env.JOB_NAME)
+                .getBuildByNumber(
+                    Integer.parseInt(env.BUILD_NUMBER))
+                .logFile.text
+
+
 }
 }
 }
