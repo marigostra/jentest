@@ -9,11 +9,11 @@ pipeline {
         sh 'git log'
       }
     }
+    }
 
 post {
 always {
 sh 'echo always'
-}
 }
 }
 }
