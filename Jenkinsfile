@@ -20,7 +20,7 @@ echo "Getting log"
                 .getBuildByNumber(
                     Integer.parseInt(env.BUILD_NUMBER))
                 .logFile.text
-
+}
 
 }
 }
