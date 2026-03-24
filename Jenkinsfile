@@ -15,7 +15,7 @@ pipeline {
     }
     
     stages {
-    stage 'test' {
+    stage ('test') {
     steps {
     echo "Building test for ${platform}"
     }
