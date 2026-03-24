@@ -5,25 +5,24 @@ pipeline {
 
   stages {
     stage('Checkout') {
-      steps {
-        sh 'git log'
-      }
+    matrix {
+    agent any
+    axes {
+    axis {
+    name 'platform'
+    values 'linux', 'windows'
     }
     }
-
-post {
-always {
-echo "Getting log"
-        script {
-
-def job = Jenkins.instance.getItemByFullName("luwrain/main")  
-if (!job) {  
-  println "Project not found: ${projectName}"  
-  return  
-}  
-
-}
-
-}
+    
+    stages {
+    stage 'test' {
+    steps {
+    echo "Building test for ${platform}"
+    }
+    }
+    }
+    }
+    }
+    }
 }
 }
