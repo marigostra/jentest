@@ -4,6 +4,11 @@ pipeline {
   triggers { pollSCM('* * * * *') }
 
   stages {
+  stage ('Prepare') {
+  steps {
+  sh 'echo preparing stage'
+  }
+  }
     stage('Checkout') {
     matrix {
     agent any
