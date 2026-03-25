@@ -29,4 +29,21 @@ pipeline {
     }
     }
     }
+
+post {
+always {
+sh 'echo post 1'
+}
+
+always {
+sh 'echo post 2'
+}
+
+always {
+sh 'echo post 3'
+}
+
+
+
+}
 }
