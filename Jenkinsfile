@@ -35,12 +35,8 @@ always {
 sh 'echo post 1'
 }
 
-always {
+success {
 sh 'echo post 2'
-}
-
-always {
-sh 'echo post 3'
 }
 
 
